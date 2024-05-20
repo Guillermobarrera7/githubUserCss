@@ -4,7 +4,7 @@
 @version        1.1.4
 @description    Github helper for the masses!
 @author         guillermobarrera7
-@updateURL      https://yourusername.github.io/github-styles/github.user.css
+@updateURL      https://raw.githubusercontent.com/Guillermobarrera7/githubUserCss/main/github.user.css
 @preprocessor   stylus
 
 @var            color readyColor "No reviews color" #2bff00
@@ -20,29 +20,37 @@
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://github.com/") {
+  :root {
+      --readyColor: #2bff00;
+      --soonColor: #fc0;
+      --waitColor: #ff2400;
+      --changesColor: #00ddff;
+      --specialRepoColor: #c0c;
+  }
+
   .Link--muted.tooltipped.tooltipped-s[aria-label="Review required before merging"] {
-      --selectedColor: waitColor;
+      --selectedColor: var(--waitColor);
   }
 
   .Link--muted.tooltipped.tooltipped-s[aria-label="1 review approval"] {
-      --selectedColor: soonColor;
+      --selectedColor: var(--soonColor);
   }
 
   .Link--muted.tooltipped.tooltipped-s[aria-label$="review approvals"] {
-      --selectedColor: readyColor;
+      --selectedColor: var(--readyColor);
   }
 
   .Link--muted.tooltipped.tooltipped-s[aria-label$="requesting changes"] {
-      --selectedColor: changesColor;
+      --selectedColor: var(--changesColor);
   }
 
   a[data-hovercard-type="repository"][href$="ecom"],
   a[data-hovercard-type="repository"][href$="underwriting"],
   a[data-hovercard-type="repository"][href$="global_customer"] {
-      color: specialRepoColor !important;
+      color: var(--specialRepoColor) !important;
   }
 
-  #js-issues-search.subnav-search-input:not([value*=githubUsername]) {
+  #js-issues-search.subnav-search-input:not([value*="guillermobarrera7"]) {
       color: red;
   }
 
