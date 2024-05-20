@@ -6,17 +6,6 @@
 @author         guillermobarrera7
 @updateURL      https://raw.githubusercontent.com/Guillermobarrera7/githubUserCss/main/github.user.css
 @preprocessor   stylus
-
-@var            color readyColor "No reviews color" #2bff00
-@var            color soonColor "1 review color" #fc0
-@var            color waitColor "2+ reviews color" #ff2400
-@var            color changesColor "Changes requested color" #00ddff
-
-@var            checkbox reviewPill "Pill-styled review states" 1
-
-@var            color specialRepoColor "Special repo color" #c0c
-@var            text githubUsername "GitHub username" "guillermobarrera7"
-
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://github.com/") {
@@ -26,6 +15,7 @@
       --waitColor: #ff2400;
       --changesColor: #00ddff;
       --specialRepoColor: #c0c;
+      --githubUsername: "guillermobarrera7";
   }
 
   .Link--muted.tooltipped.tooltipped-s[aria-label="Review required before merging"] {
@@ -72,18 +62,15 @@
 
   /* Pills for review states */
   .Link--muted.tooltipped.tooltipped-s {
-      if reviewPill {
-          display: inline-block;
-          padding: 0 7px;
-          font-size: 12px;
-          font-weight: 500;
-          line-height: 18px;
-          white-space: nowrap;
-          border: 1px solid transparent;
-          border-radius: 2em;
-          border-color: var(--selectedColor);
-      }
-
+      display: inline-block;
+      padding: 0 7px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      border-radius: 2em;
+      border-color: var(--selectedColor);
       color: var(--selectedColor) !important;
       font-style: italic;
   }
